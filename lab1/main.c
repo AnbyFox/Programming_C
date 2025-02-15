@@ -19,11 +19,14 @@ int main(int argc, char *argv[]) {
 	double a,b,c;
 	double x1,x2,d;
 	
-	a = 5.3;
-	b = 20.1;
-	c = 6.0;
+	printf("Type a value for A argument:\n");
+	scanf("%lf", &a);
 	
-	/* D = 0 when a = 1, b = 2, c = 1 */
+	printf("Type a value for B argument:\n");
+	scanf("%lf", &b);
+	
+	printf("Type a value for C argument:\n");
+	scanf("%lf", &c);
 	
 	d = pow(b, 2) - (4*a*c);
 	
