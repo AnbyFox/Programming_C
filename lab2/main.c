@@ -17,35 +17,35 @@ int main(int argc, char *argv[]) {
 	    		printf("Type value for %d %d argument: ", i, j);
 		        scanf("%lf", &M[i][j]);
 	    	}
-		}
+	    }
 		
-		double a, b;
-		a = M[0][0] + M[1][1] + M[2][2];
-		b = M[2][0] + M[1][1] + M[0][2];
-		printf("\nMain horizontal line summ = %lf\n", a);
-		printf("Side horizontal line summ = %lf", b);
+	    double a, b;
+	    a = M[0][0] + M[1][1] + M[2][2];
+	    b = M[2][0] + M[1][1] + M[0][2];
+	    printf("\nMain horizontal line summ = %lf\n", a);
+	    printf("Side horizontal line summ = %lf", b);
 	} else {
-		int M[2][2];
+	    int M[2][2];
 		
-		int i, j;
-	  for(i = 0; i < 2; i++) {
+	    int i, j;
+	    for(i = 0; i < 2; i++) {
 	    	for(j = 0; j < 2; j++) {
-	    		int num;
-	    		printf("Type value for %d %d argument: ", i, j);
-		        scanf("%d", &num);
-		        M[i][j] = num * num;
+	    	    int num;
+	    	    printf("Type value for %d %d argument: ", i, j);
+		    scanf("%d", &num);
+		    M[i][j] = num * num;
 	    	}
-		}
+	    }
 		
-		printf("\nCurrent massive:\n");
-		for(i = 0; i < 2; i++) {
+	    printf("\nCurrent massive:\n");
+	    for(i = 0; i < 2; i++) {
 	    	for(j = 0; j < 2; j++) {
-	    		printf("[%d]", M[i][j]);
-	    		if(j > 0) printf("\n");
+	    	    printf("[%d]", M[i][j]);
+	    	    if(j > 0) printf("\n");
 	    	}
-		}
+	    }
 		
 	}
-    
-    return 0;
+	
+	return 0;
 }
