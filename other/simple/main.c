@@ -1,26 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+
+int type(int num) {
+	int step, count = 0;
+	for(step = 1; step <= num; step++) if(num % step == 0) count++;
+	if(count == 2) return num;
+	return 0;
+}
 
 int main(int argc, char *argv[]) {
+	printf("Type the number range: ");
 	
-	int usernum = 1;
+	int range = 1;
+	scanf("%d", &range);
 	
-	printf("Choose a number to search to: ");
-	scanf("%d", &usernum);
+	int num, max;
+	for(num = 0; num <= range; num++) if(type(num) > max) max = type(num);
 	
-	printf("\nSimple numbers:");
-	
-	int num;
-	for(num = 0; num <= usernum; num++) {
-		
-		int step, count = 0;
-		for(step = 1; step <= num; step++) {
-			if(num % step == 0) count++;
-		}
-	
-		if(count == 2) printf("\n%d", num);
-	}
-    
+	printf("The max simple number: %d", max);
     return 0;
 }
