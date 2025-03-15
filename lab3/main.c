@@ -6,11 +6,10 @@ int main(int argc, char *argv[]) {
 	
 	char str[81];
 	
-	printf("Type the sentence: (Max lenght is 80 chars)\n");
+	printf("Type the sentence: ");
 	fgets(str, sizeof(str), stdin);
-		        
-	int i;
-	for(i = 0; i < sizeof(str); i++) {
+
+	for(int i = 0; i < sizeof(str); i++) {
 		if(str[i] == 'a') str[i] = 'A';
 		if(str[i] == 'b') str[i] = 'B';
 	}
