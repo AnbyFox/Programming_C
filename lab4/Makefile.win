@@ -1,0 +1,31 @@
+# Project: main
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o addstuff.o
+LINKOBJ  = main.o addstuff.o
+LIBS     = -L"D:/Games/DevCpp63/TDM-GCC-64/lib" -L"D:/Games/DevCpp63/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Games/DevCpp63/TDM-GCC-64/include" -I"D:/Games/DevCpp63/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Games/DevCpp63/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"D:/Games/DevCpp63/TDM-GCC-64/include" -I"D:/Games/DevCpp63/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Games/DevCpp63/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/Games/DevCpp63/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = main.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = D:\Games\DevCpp63\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+addstuff.o: addstuff.c
+	$(CC) -c addstuff.c -o addstuff.o $(CFLAGS)

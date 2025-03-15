@@ -2,13 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int P(double a, double b, double c) {
-	return a + b + c;
-}
-
-int S(double a, double b, double c, double p) {
-	return sqrt(p * (p - a) * (p - b) * (p - c));
-}
+#include "addstuff.h"
 
 int main(int argc, char *argv[]) {
 	
@@ -25,8 +19,8 @@ int main(int argc, char *argv[]) {
 	
 	if((a + b) > c && (b + c) > a && (a + c) > b) {
 		double curP, curS;
-		curP = P(a, b, c);
-		curS = S(a, b, c, curP/2);
+		curP = Pmath(a, b, c);
+		curS = Smath(a, b, c, curP/2);
 		
 		printf("\nTriangle's P: %lf", curP);
 		printf("\nTriangle's S: %lf", curS);
