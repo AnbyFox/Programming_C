@@ -4,35 +4,32 @@
 
 int main(int argc, char *argv[]) {
     while (1) {
-	double a,b,c;
-	double x1,x2,d;
+		double a,b,c;
+		double x1,x2,d;
 		
-	printf("Type a value for A argument:\n");
-	scanf("%lf", &a);
+		printf("Type a value for A argument: ");
+		scanf("%lf", &a);
 		
-	printf("Type a value for B argument:\n");
-	scanf("%lf", &b);
+		printf("Type a value for B argument: ");
+		scanf("%lf", &b);
 		
-	printf("Type a value for C argument:\n");
-	scanf("%lf", &c);
+		printf("Type a value for C argument: ");
+		scanf("%lf", &c);
 		
-	d = pow(b, 2) - (4*a*c);
+		d = pow(b, 2) - (4*a*c);
 		
-	if (d < 0) printf("Discrimant is negative.\n\n");
-	else if(d == 0)
-	{
-	    x1 = -b / (2*a);
-	}
-	else
-	{
-	    x1 = (-b + sqrt(d)) / (2*a);
-	    x2 = (-b - sqrt(d)) / (2*a);
-	}
+		if (d < 0) printf("\nDiscrimant is negative.\n");
+		else if(d == 0) {
+		    x1 = -b / (2*a);
+		} else {
+		    x1 = (-b + sqrt(d)) / (2*a);
+		    x2 = (-b - sqrt(d)) / (2*a);
+		}
 	
-	if (d >= 0) printf("Discriminant = %lf", d);
-	if (d >= 0) printf("\nX1 = %lf", x1);
-	if (d > 0) printf("\nX2 = %lf", x2);
-	printf("\n\n");
+		if (d >= 0) printf("\nDiscriminant = %lf", d);
+		if (d >= 0) printf("\nX1 = %lf", x1);
+		if (d > 0) printf("\nX2 = %lf", x2);
+		printf("\n\n");
     }
     
     return 0;
