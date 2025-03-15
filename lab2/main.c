@@ -11,9 +11,8 @@ int main(int argc, char *argv[]) {
 	if(task_type == 1) {
 	    double M[3][3];
 	    
-	    int i, j;
-	    for(i = 0; i < 3; i++) {
-	    	for(j = 0; j < 3; j++) {
+	    for(int i = 0; i < 3; i++) {
+	    	for(int j = 0; j < 3; j++) {
 	    		printf("Type value for %d %d argument: ", i, j);
 		        scanf("%lf", &M[i][j]);
 	    	}
@@ -27,19 +26,18 @@ int main(int argc, char *argv[]) {
 	} else {
 	    int M[2][2];
 		
-	    int i, j;
-	    for(i = 0; i < 2; i++) {
-	    	for(j = 0; j < 2; j++) {
-	    	    int num;
+		int num;
+	    for(int i = 0; i < 2; i++) {
+	    	for(int j = 0; j < 2; j++) {
 	    	    printf("Type value for %d %d argument: ", i, j);
-		    scanf("%d", &num);
-		    M[i][j] = num * num;
+		        scanf("%d", &num);
+		        M[i][j] = num * num;
 	    	}
 	    }
 		
 	    printf("\nCurrent massive:\n");
-	    for(i = 0; i < 2; i++) {
-	    	for(j = 0; j < 2; j++) {
+	    for(int i = 0; i < 2; i++) {
+	    	for(int j = 0; j < 2; j++) {
 	    	    printf("[%d]", M[i][j]);
 	    	    if(j > 0) printf("\n");
 	    	}
