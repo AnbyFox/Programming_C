@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 		
 		if(n < 1) n = 1;
 		
-		double **M1, **M2;
+		double **M1, **M2, **M;
 		M1 = (double**)malloc(n*sizeof(double*));
 		M2 = (double**)malloc(n*sizeof(double*));
 		
@@ -40,13 +40,25 @@ int main(int argc, char *argv[]) {
 		printf("Select the math action: (+|-|*|/) ");
 		scanf(" %c", &choice);
 		
-		massiveOperation(n, M1, M2, choice);
+		M = massiveOperation(n, M1, M2, choice);
+		
+		printf("Result Massive = [\n");
+		for(int i = 0; i < n; i++) {
+		    for(int j = 0; j < n; j++) {
+		    	if(j == 0) printf("  ");
+				printf("[%lf]", M[i][j]);
+				if(j == (n-1)) printf("\n");
+		    }
+		} 
+		printf("]\n\n");
 		
 		for(int i = 0; i < n; i++) {
 			free(M1[i]);
 			free(M2[i]);
+			free(M[i]);
 		}
 		free(M1);
 		free(M2);
+		free(M);
 	}
 }

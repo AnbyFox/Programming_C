@@ -38,18 +38,5 @@ double** massiveOperation(int size, double **M1, double **M2, char operation) {
 		}  
 	}
 	
-	printf("Result Massive = [\n");
-	for(int i = 0; i < n; i++) {
-	    for(int j = 0; j < n; j++) {
-	    	if(j == 0) printf("  ");
-			printf("[%lf]", M[i][j]);
-			if(j == (n-1)) printf("\n");
-	    }
-	} 
-	printf("]\n\n");
-	
-	for(int i = 0; i < n; i++) {
-		free(M[i]);
-	}
-	free(M);
+	return M;
 }
