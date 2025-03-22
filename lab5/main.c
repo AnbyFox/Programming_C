@@ -12,6 +12,8 @@ int main(int argc, char *argv[]) {
 		printf("Type the length of 'n': ");
 		scanf("%d", &n);
 		
+		if(n < 1) n = 1;
+		
 		double **M1, **M2;
 		M1 = (double**)malloc(n*sizeof(double*));
 		M2 = (double**)malloc(n*sizeof(double*));
@@ -35,7 +37,7 @@ int main(int argc, char *argv[]) {
 		    }
 		}
 		
-		printf("Select the math action: ");
+		printf("Select the math action: (+|-|*|/) ");
 		scanf(" %c", &choice);
 		
 		massiveOperation(n, M1, M2, choice);
