@@ -3,17 +3,15 @@
 
 double** massiveOperation(int size, double **M1, double **M2, char operation) {
 	
-	int n = size;
-	
     double **M;
-	M = (double**)malloc(n*sizeof(double*));
+	M = (double**)malloc(size*sizeof(double*));
 	
-	for(int i = 0; i < n; i++) {
-		M[i] = (double*)malloc(n*sizeof(double));
+	for(int i = 0; i < size; i++) {
+		M[i] = (double*)malloc(size*sizeof(double));
 	}
 	
-	for(int i = 0; i < n; i++) {
-		for(int j = 0; j < n; j++) {
+	for(int i = 0; i < size; i++) {
+		for(int j = 0; j < size; j++) {
 			M[i][j] = M1[i][j] + M2[i][j];
 			if(operation == '-') M[i][j] = M1[i][j] - M2[i][j];
 			if(operation == '*') M[i][j] = M1[i][j] * M2[i][j];
